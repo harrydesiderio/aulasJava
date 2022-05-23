@@ -1,0 +1,48 @@
+package br.com.fiap.view;
+
+import javax.swing.JOptionPane;
+
+import br.com.fiap.model.Funcionario;
+
+public class TesteView {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// Instancia objeto funcionario da classe funcionario
+		//Funcionario objFuncionario = new Funcionario();
+
+		// Instacia de objeto e iniciando com valor de um metodo Construtor
+		 //Funcionario objFuncionario = new Funcionario("Rafa");
+		 
+		// Instacia de objeto e iniciando com valor de um metodo 
+		// podendo usar tabém o JOptionPane para entrada de dados 
+		 Funcionario objFuncionario = new Funcionario(JOptionPane.showInputDialog("Digite o nome do Funcionário: "));
+
+		// Sets
+		//objFuncionario.setNome(JOptionPane.showInputDialog("Digite o nome do Funcionário"));
+		objFuncionario.setCargo(JOptionPane.showInputDialog("Digite o Cargo"));
+		objFuncionario.setValorHora(Double.parseDouble(JOptionPane.showInputDialog("Digite o Valor " + "-" + "Hora")));
+
+		// Gets
+		System.out.println("Nome: " + objFuncionario.getNome());
+		System.out.println("Cargo: " + objFuncionario.getCargo());
+		System.out.println("Valor-Hora: " + objFuncionario.getValorHora());
+
+		// System.out.println(objFuncionario.getTudo());
+		System.out.println("Salário Bruto: " + objFuncionario.calcSalarioBruto(200));
+		System.out.println("IR: " + objFuncionario.calcularIr(200, 12));
+
+		/*
+		 * Exemplos Set e Get com input através da classe Scanner sem JOptionPane
+		 * Scanner entrada = new Scanner(System.in);
+		 * 
+		 * System.out.println("Digite o nome: ");
+		 * objFuncionario.setNome(entrada.next());
+		 * System.out.println("O nome do funcionario é: " + objFuncionario.getNome());
+		 * entrada.close();
+		 */
+
+	}
+
+}
